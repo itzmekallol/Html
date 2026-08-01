@@ -1,1058 +1,627 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML — Complete Notes</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;800&family=Inter:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+    <title>HTML Notes — Reference Guide</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <div class="hero-label">// Complete Reference Notes</div>
-      <h1>HTML <span>A to Z</span></h1>
-      <p>
-        Everything from document structure to semantic elements, forms, media,
-        tables, and best practices — organized for fast learning.
-      </p>
-      <nav class="toc-pill-row">
-        <a class="toc-pill" href="#basics">Basics</a>
-        <a class="toc-pill" href="#text">Text</a>
-        <a class="toc-pill" href="#links">Links & Images</a>
-        <a class="toc-pill" href="#lists">Lists</a>
-        <a class="toc-pill" href="#tables">Tables</a>
-        <a class="toc-pill" href="#forms">Forms</a>
-        <a class="toc-pill" href="#semantic">Semantic HTML</a>
-        <a class="toc-pill" href="#media">Media</a>
-        <a class="toc-pill" href="#meta">Head & Meta</a>
-        <a class="toc-pill" href="#global">Attributes</a>
-        <a class="toc-pill" href="#bestpractice">Best Practices</a>
-      </nav>
-    </header>
+</head>
+<body>
 
-    <main>
-      <!-- ═══════════════ 01 BASICS ═══════════════ -->
-      <section class="chapter" id="basics">
-        <div class="chapter-label">
-          <span class="chapter-num">01</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>HTML Basics</h2>
-        <p class="chapter-desc">
-          What HTML is, how a page is structured, and how tags work.
-        </p>
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn">☰</button>
+  <div class="logo"><span class="mark"></span> HTML Notes</div>
+  <div class="path">Tutorials and guides / HTML Guide</div>
+</div>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">What is HTML?</div>
-            <p>
-              HTML (HyperText Markup Language) is the standard markup language
-              for creating web pages. It describes the <em>structure</em> and
-              <em>content</em> of web documents using <strong>elements</strong>.
-              Browsers read HTML and render it as visual pages.
-            </p>
-            <div class="callout">
-              <strong>Key idea:</strong> HTML is about
-              <em>meaning</em> (structure), not style. CSS handles looks, JS
-              handles behavior.
-            </div>
-          </div>
+<div class="layout">
 
-          <div class="card">
-            <div class="card-title">Anatomy of an Element</div>
-            <p>
-              An element has an opening tag, content, and a closing tag. Some
-              are self-closing.
-            </p>
-            <pre><span class="cm">&lt;!-- Normal element --&gt;</span>
-<span class="t">&lt;p&gt;</span><span class="tx">Hello, world!</span><span class="t">&lt;/p&gt;</span>
+  <!-- LEFT SIDEBAR -->
+  <nav class="sidebar" id="sidebar">
+    <h4>Overview</h4>
+    <a href="#what-is-html" class="nav-link">What is HTML?</a>
 
-<span class="cm">&lt;!-- Self-closing (void element) --&gt;</span>
-<span class="t">&lt;br</span> <span class="t">/&gt;</span>
-<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"photo.jpg"</span> <span class="a">alt</span>=<span class="v">"A photo"</span> <span class="t">/&gt;</span></pre>
-          </div>
+    <h4>HTML Basics</h4>
+    <a href="#structure" class="nav-link">1. Structure</a>
+    <a href="#tags" class="nav-link">2. Tags &amp; simple page</a>
+    <a href="#text" class="nav-link">3. Text elements</a>
+    <a href="#lists" class="nav-link">4. Lists</a>
+    <a href="#nested" class="nav-link">5. Nested elements</a>
+    <a href="#media" class="nav-link">6. Media tags</a>
+    <a href="#attributes" class="nav-link">7. Attributes</a>
+    <a href="#navigating" class="nav-link">8. Navigating pages</a>
+    <a href="#comments" class="nav-link">9. Comments</a>
 
-          <div class="card">
-            <div class="card-title">The Boilerplate</div>
-            <p>
-              The basic structure of an HTML document. Every HTML page starts
-              with this skeleton:
-            </p>
-            <pre><span class="t">&lt;!DOCTYPE html&gt;</span>
-<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="v">"en"</span><span class="t">&gt;</span>
-  <span class="t">&lt;head&gt;</span>
-    <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">/&gt;</span>
-    <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span> <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">/&gt;</span>
-    <span class="t">&lt;title&gt;</span><span class="tx">Page Title</span><span class="t">&lt;/title&gt;</span>
-  <span class="t">&lt;/head&gt;</span>
-  <span class="t">&lt;body&gt;</span>
-    <span class="cm">&lt;!-- visible content here --&gt;</span>
-  <span class="t">&lt;/body&gt;</span>
-<span class="t">&lt;/html&gt;</span></pre>
-          </div>
+    <h4>HTML Tags</h4>
+    <a href="#div" class="nav-link">Div tags</a>
+    <a href="#semantic" class="nav-link">Semantic tags</a>
+    <a href="#block-inline" class="nav-link">Block vs inline</a>
+    <a href="#formatting" class="nav-link">Text formatting</a>
+    <a href="#symbols" class="nav-link">Symbols &amp; entities</a>
+    <a href="#tables" class="nav-link">Tables</a>
+    <a href="#table-attrs" class="nav-link">Table attributes</a>
 
-          <div class="card">
-            <div class="card-title">Essential tags</div>
-            <ul>
-              <li>
-                <strong>Block elements</strong> — start on a new line, take full
-                width: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>,
-                <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>,
-                <code>&lt;section&gt;</code>
-              </li>
-              <li>
-                <strong>Inline elements</strong> — flow within text:
-                <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
-                <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
-                <code>&lt;img&gt;</code>
-              </li>
-            </ul>
-            <div class="callout">
-              <strong>Note:</strong> CSS <code>display</code> property can
-              change any element's behavior.
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-title">Block vs Inline</div>
-            <ul>
-              <li>
-                <strong>Block elements</strong> — start on a new line, take full
-                width: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>,
-                <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>,
-                <code>&lt;section&gt;</code>
-              </li>
-              <li>
-                <strong>Inline elements</strong> — flow within text:
-                <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
-                <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
-                <code>&lt;img&gt;</code>
-              </li>
-            </ul>
-            <div class="callout">
-              <strong>Note:</strong> CSS <code>display</code> property can
-              change any element's behavior.
-            </div>
-          </div>
-        </div>
-      </section>
+    <h4>Forms &amp; Inputs</h4>
+    <a href="#forms-what" class="nav-link">What is a form?</a>
+    <a href="#forms-simple" class="nav-link">Creating a form</a>
+    <a href="#input-types" class="nav-link">Input types</a>
+    <a href="#form-attrs" class="nav-link">Form attributes</a>
 
-      <!-- ═══════════════ 02 TEXT ═══════════════ -->
-      <section class="chapter" id="text">
-        <div class="chapter-label">
-          <span class="chapter-num">02</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Text Elements</h2>
-        <p class="chapter-desc">
-          Headings, paragraphs, emphasis, and inline text formatting.
-        </p>
+    <h4>Media</h4>
+    <a href="#audio-video" class="nav-link">Audio &amp; video</a>
+    <a href="#media-attrs" class="nav-link">Media attributes</a>
+    <a href="#source" class="nav-link">Source element</a>
+    <a href="#iframe" class="nav-link">Iframe</a>
 
-        <div class="cards two">
-          <div class="card">
-            <div class="card-title">
-              Headings <span class="tag-badge">&lt;h1&gt;–&lt;h6&gt;</span>
-            </div>
-            <p>
-              Six levels of headings. Use one <code>&lt;h1&gt;</code> per page
-              (SEO + accessibility), then h2–h6 hierarchically.
-            </p>
-            <pre><span class="t">&lt;h1&gt;</span><span class="tx">Main Title</span><span class="t">&lt;/h1&gt;</span>
-<span class="t">&lt;h2&gt;</span><span class="tx">Section</span><span class="t">&lt;/h2&gt;</span>
-<span class="t">&lt;h3&gt;</span><span class="tx">Sub-section</span><span class="t">&lt;/h3&gt;</span></pre>
-          </div>
+    <h4>Reference</h4>
+    <a href="#best-practices" class="nav-link">HTML5 best practices</a>
+  </nav>
 
-          <div class="card">
-            <div class="card-title">
-              Paragraph <span class="tag-badge">&lt;p&gt;</span>
-            </div>
-            <p>
-              The main block for text. Browsers add top/bottom margin by
-              default.
-            </p>
-            <pre><span class="t">&lt;p&gt;</span><span class="tx">This is a paragraph of text.</span><span class="t">&lt;/p&gt;</span></pre>
-          </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="eyebrow">Tutorials and guides / HTML Guide</div>
+    <h1 class="page-title">What is HTML?</h1>
+    <p class="lede" id="what-is-html">
+      HTML (HyperText Markup Language) is the standard markup language for creating web pages.
+      It describes the structure and content of web documents using elements and tags.
+    </p>
 
-          <div class="card">
-            <div class="card-title">Emphasis & Strong</div>
-            <table>
-              <tr>
-                <th>Tag</th>
-                <th>Meaning</th>
-              </tr>
-              <tr>
-                <td>&lt;strong&gt;</td>
-                <td>Important text (bold visually)</td>
-              </tr>
-              <tr>
-                <td>&lt;em&gt;</td>
-                <td>Stressed emphasis (italic)</td>
-              </tr>
-              <tr>
-                <td>&lt;b&gt;</td>
-                <td>Bold — no semantic weight</td>
-              </tr>
-              <tr>
-                <td>&lt;i&gt;</td>
-                <td>Italic — no semantic weight</td>
-              </tr>
-              <tr>
-                <td>&lt;mark&gt;</td>
-                <td>Highlighted / relevant text</td>
-              </tr>
-              <tr>
-                <td>&lt;small&gt;</td>
-                <td>Fine print, side comments</td>
-              </tr>
-              <tr>
-                <td>&lt;del&gt;</td>
-                <td>Deleted text (strikethrough)</td>
-              </tr>
-              <tr>
-                <td>&lt;ins&gt;</td>
-                <td>Inserted text (underline)</td>
-              </tr>
-              <tr>
-                <td>&lt;sub&gt;</td>
-                <td>Subscript (H₂O)</td>
-              </tr>
-              <tr>
-                <td>&lt;sup&gt;</td>
-                <td>Superscript (x²)</td>
-              </tr>
-            </table>
-          </div>
+    <h2 id="structure"><span class="num">01</span>Understanding HTML Structure</h2>
+    <p>The basic structure of an HTML document includes:</p>
+    <pre><code><span class="punct">&lt;!DOCTYPE </span><span class="tag">html</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">html</span> <span class="attrname">lang</span>=<span class="attrval">"en"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">head</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">meta</span> <span class="attrname">charset</span>=<span class="attrval">"UTF-8"</span> <span class="punct">/&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">meta</span> <span class="attrname">name</span>=<span class="attrval">"viewport"</span> <span class="attrname">content</span>=<span class="attrval">"width=device-width, initial-scale=1.0"</span> <span class="punct">/&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">title</span><span class="punct">&gt;</span>Page Title<span class="punct">&lt;/</span><span class="tag">title</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">head</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">body</span><span class="punct">&gt;</span>
+    <span class="comment">&lt;!-- Content goes here --&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">body</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">html</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">Other Text Tags</div>
-            <table>
-              <tr>
-                <th>Tag</th>
-                <th>Use</th>
-              </tr>
-              <tr>
-                <td>&lt;br&gt;</td>
-                <td>Line break (void element)</td>
-              </tr>
-              <tr>
-                <td>&lt;hr&gt;</td>
-                <td>Thematic break / divider</td>
-              </tr>
-              <tr>
-                <td>&lt;pre&gt;</td>
-                <td>Preformatted text (preserves spaces)</td>
-              </tr>
-              <tr>
-                <td>&lt;code&gt;</td>
-                <td>Inline code snippet</td>
-              </tr>
-              <tr>
-                <td>&lt;kbd&gt;</td>
-                <td>Keyboard input (Ctrl+C)</td>
-              </tr>
-              <tr>
-                <td>&lt;abbr&gt;</td>
-                <td>Abbreviation with title tooltip</td>
-              </tr>
-              <tr>
-                <td>&lt;blockquote&gt;</td>
-                <td>Long quotation from another source</td>
-              </tr>
-              <tr>
-                <td>&lt;q&gt;</td>
-                <td>Short inline quotation</td>
-              </tr>
-              <tr>
-                <td>&lt;cite&gt;</td>
-                <td>Reference to a work title</td>
-              </tr>
-              <tr>
-                <td>&lt;address&gt;</td>
-                <td>Contact information</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </section>
+    <h2 id="tags"><span class="num">02</span>Understanding Tags and Building a Simple HTML Page</h2>
+    <p><strong>Essential tags:</strong></p>
+    <ul>
+      <li><code>&lt;!DOCTYPE html&gt;</code>: Declares the document type.</li>
+      <li><code>&lt;html&gt;</code>: Root element of the page.</li>
+      <li><code>&lt;head&gt;</code>: Metadata (e.g., title, styles, and links).</li>
+      <li><code>&lt;title&gt;</code>: Title of the page.</li>
+      <li><code>&lt;body&gt;</code>: Visible content goes here.</li>
+    </ul>
 
-      <!-- ═══════════════ 03 LINKS & IMAGES ═══════════════ -->
-      <section class="chapter" id="links">
-        <div class="chapter-label">
-          <span class="chapter-num">03</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Links & Images</h2>
-        <p class="chapter-desc">Hyperlinking pages and embedding images.</p>
+    <h2 id="text"><span class="num">03</span>Working with Text Elements</h2>
+    <ul>
+      <li><strong>Headings (<code>h1</code> to <code>h6</code>)</strong>: Define headings, <code>h1</code> being the largest.</li>
+      <li><strong>Paragraphs (<code>p</code>)</strong>: Used for blocks of text.</li>
+      <li><strong>Line Breaks (<code>br</code>)</strong>: Adds a new line.</li>
+      <li><strong>Anchor (<code>a</code>)</strong>: Creates hyperlinks.</li>
+      <li><strong>Span (<code>span</code>)</strong>: Inline container for text styling.</li>
+      <li><strong>Code (<code>code</code>)</strong>: Displays code snippets.</li>
+      <li><strong>Preformatted Text (<code>pre</code>)</strong>: Preserves spacing and formatting.</li>
+    </ul>
+    <pre><code><span class="comment">&lt;!-- Working with Text Elements --&gt;</span>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">
-              Anchor Tag <span class="tag-badge">&lt;a&gt;</span>
-            </div>
-            <pre><span class="cm">&lt;!-- External link --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://example.com"</span> <span class="a">target</span>=<span class="v">"_blank"</span> <span class="a">rel</span>=<span class="v">"noopener"</span><span class="t">&gt;</span>
-  <span class="tx">Visit Example</span>
-<span class="t">&lt;/a&gt;</span>
+<span class="punct">&lt;</span><span class="tag">h1</span><span class="punct">&gt;</span>Main Heading<span class="punct">&lt;/</span><span class="tag">h1</span><span class="punct">&gt;</span>
+<span class="comment">&lt;!-- h1 to h6 --&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>This is a paragraph of text.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>
+  New line here <span class="punct">&lt;</span><span class="tag">br</span> <span class="punct">/&gt;</span>
+  after the break.
+<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"https://example.com"</span> <span class="attrname">target</span>=<span class="attrval">"_blank"</span><span class="punct">&gt;</span>Visit Example<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">span</span> <span class="attrname">style</span>=<span class="attrval">"color: blue;"</span><span class="punct">&gt;</span>This text is blue.<span class="punct">&lt;/</span><span class="tag">span</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">pre</span><span class="punct">&gt;</span>
+  Preformatted text
+  Line spacing preserved.
+<span class="punct">&lt;/</span><span class="tag">pre</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">code</span><span class="punct">&gt;</span>console.log('Hello, World!');<span class="punct">&lt;/</span><span class="tag">code</span><span class="punct">&gt;</span></code></pre>
 
-<span class="cm">&lt;!-- Internal / same-page link --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"#section2"</span><span class="t">&gt;</span><span class="tx">Jump to Section 2</span><span class="t">&lt;/a&gt;</span>
+    <h3>Paragraphs and Text Formatting</h3>
+    <pre><code><span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Regular paragraph text<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">strong</span><span class="punct">&gt;</span>Bold/Important text<span class="punct">&lt;/</span><span class="tag">strong</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">em</span><span class="punct">&gt;</span>Italic/Emphasized text<span class="punct">&lt;/</span><span class="tag">em</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">mark</span><span class="punct">&gt;</span>Highlighted text<span class="punct">&lt;/</span><span class="tag">mark</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">small</span><span class="punct">&gt;</span>Small text<span class="punct">&lt;/</span><span class="tag">small</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">del</span><span class="punct">&gt;</span>Deleted text<span class="punct">&lt;/</span><span class="tag">del</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">ins</span><span class="punct">&gt;</span>Inserted text<span class="punct">&lt;/</span><span class="tag">ins</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">sub</span><span class="punct">&gt;</span>Subscript<span class="punct">&lt;/</span><span class="tag">sub</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">sup</span><span class="punct">&gt;</span>Superscript<span class="punct">&lt;/</span><span class="tag">sup</span><span class="punct">&gt;</span>
 
-<span class="cm">&lt;!-- Email & phone links --&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:hi@example.com"</span><span class="t">&gt;</span><span class="tx">Email us</span><span class="t">&lt;/a&gt;</span>
-<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"tel:+1234567890"</span><span class="t">&gt;</span><span class="tx">Call us</span><span class="t">&lt;/a&gt;</span></pre>
-            <table>
-              <tr>
-                <th>Attribute</th>
-                <th>Purpose</th>
-              </tr>
-              <tr>
-                <td>href</td>
-                <td>Destination URL (required)</td>
-              </tr>
-              <tr>
-                <td>target</td>
-                <td>_blank = new tab, _self = same tab</td>
-              </tr>
-              <tr>
-                <td>rel</td>
-                <td>Relationship (noopener for security)</td>
-              </tr>
-              <tr>
-                <td>download</td>
-                <td>Triggers file download</td>
-              </tr>
-            </table>
-          </div>
+<span class="punct">&lt;</span><span class="tag">br</span> <span class="punct">/&gt;</span>
+<span class="comment">&lt;!-- Line break --&gt;</span>
+<span class="punct">&lt;</span><span class="tag">hr</span> <span class="punct">/&gt;</span>
+<span class="comment">&lt;!-- Horizontal rule/divider --&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">
-              Image Tag <span class="tag-badge">&lt;img&gt;</span>
-            </div>
-            <pre><span class="t">&lt;img</span>
-  <span class="a">src</span>=<span class="v">"photo.jpg"</span>
-  <span class="a">alt</span>=<span class="v">"A mountain at sunset"</span>
-  <span class="a">width</span>=<span class="v">"600"</span>
-  <span class="a">height</span>=<span class="v">"400"</span>
-  <span class="a">loading</span>=<span class="v">"lazy"</span>
-<span class="t">/&gt;</span></pre>
-            <table>
-              <tr>
-                <th>Attribute</th>
-                <th>Notes</th>
-              </tr>
-              <tr>
-                <td>src</td>
-                <td>Path or URL to image (required)</td>
-              </tr>
-              <tr>
-                <td>alt</td>
-                <td>Text if image fails — required for a11y</td>
-              </tr>
-              <tr>
-                <td>width / height</td>
-                <td>Prevents layout shift (CLS)</td>
-              </tr>
-              <tr>
-                <td>loading</td>
-                <td>lazy = defer off-screen images</td>
-              </tr>
-            </table>
-            <div class="callout">
-              <strong>Always</strong> add a meaningful
-              <code>alt</code> attribute for screen readers. Use
-              <code>alt=""</code> for decorative images.
-            </div>
-          </div>
-        </div>
-      </section>
+    <h2 id="lists"><span class="num">04</span>Working with HTML Lists</h2>
+    <ul>
+      <li><strong>Ordered List (<code>ol</code>)</strong>: Numbered items.</li>
+      <li><strong>Unordered List (<code>ul</code>)</strong>: Bulleted items.</li>
+      <li><strong>List Item (<code>li</code>)</strong>: Represents an item in a list.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">h2</span><span class="punct">&gt;</span>Ordered List:<span class="punct">&lt;/</span><span class="tag">h2</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">ol</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>First item<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>Second item<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">ol</span><span class="punct">&gt;</span>
 
-      <!-- ═══════════════ 04 LISTS ═══════════════ -->
-      <section class="chapter" id="lists">
-        <div class="chapter-label">
-          <span class="chapter-num">04</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Lists</h2>
-        <p class="chapter-desc">Unordered, ordered, and description lists.</p>
+<span class="punct">&lt;</span><span class="tag">h2</span><span class="punct">&gt;</span>Unordered List:<span class="punct">&lt;/</span><span class="tag">h2</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">ul</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>First item<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>Second item<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">ul</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards two">
-          <div class="card">
-            <div class="card-title">
-              Unordered List <span class="tag-badge">&lt;ul&gt;</span>
-            </div>
-            <p>Bullet points — for items where order doesn't matter.</p>
-            <pre><span class="t">&lt;ul&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">HTML</span><span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">CSS</span><span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">JavaScript</span><span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ul&gt;</span></pre>
-          </div>
+    <h2 id="nested"><span class="num">05</span>Nested Elements in HTML</h2>
+    <p>HTML elements can contain other elements.</p>
+    <pre><code><span class="punct">&lt;</span><span class="tag">ul</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>
+    Item 1
+    <span class="punct">&lt;</span><span class="tag">ul</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>Nested Item 1.1<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>Nested Item 1.2<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">ul</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">li</span><span class="punct">&gt;</span>Item 2<span class="punct">&lt;/</span><span class="tag">li</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">ul</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">
-              Ordered List <span class="tag-badge">&lt;ol&gt;</span>
-            </div>
-            <p>Numbered — for steps, rankings, sequences.</p>
-            <pre><span class="t">&lt;ol</span> <span class="a">type</span>=<span class="v">"1"</span> <span class="a">start</span>=<span class="v">"1"</span><span class="t">&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">Boil water</span><span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">Add pasta</span><span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">Cook 10 min</span><span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ol&gt;</span>
-<span class="cm">&lt;!-- type: 1, A, a, I, i --&gt;</span></pre>
-          </div>
+    <h3>Description Lists</h3>
+    <pre><code><span class="punct">&lt;</span><span class="tag">dl</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">dt</span><span class="punct">&gt;</span>Term 1<span class="punct">&lt;/</span><span class="tag">dt</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">dd</span><span class="punct">&gt;</span>Description of term 1<span class="punct">&lt;/</span><span class="tag">dd</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">dt</span><span class="punct">&gt;</span>Term 2<span class="punct">&lt;/</span><span class="tag">dt</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">dd</span><span class="punct">&gt;</span>Description of term 2<span class="punct">&lt;/</span><span class="tag">dd</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">dl</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">
-              Description List <span class="tag-badge">&lt;dl&gt;</span>
-            </div>
-            <p>Term-definition pairs — great for glossaries and FAQs.</p>
-            <pre><span class="t">&lt;dl&gt;</span>
-  <span class="t">&lt;dt&gt;</span><span class="tx">HTML</span><span class="t">&lt;/dt&gt;</span>
-  <span class="t">&lt;dd&gt;</span><span class="tx">HyperText Markup Language</span><span class="t">&lt;/dd&gt;</span>
-  <span class="t">&lt;dt&gt;</span><span class="tx">CSS</span><span class="t">&lt;/dt&gt;</span>
-  <span class="t">&lt;dd&gt;</span><span class="tx">Cascading Style Sheets</span><span class="t">&lt;/dd&gt;</span>
-<span class="t">&lt;/dl&gt;</span></pre>
-          </div>
+    <h3>Link Attributes</h3>
+    <pre><code><span class="comment">// Basic Links</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"https://example.com"</span><span class="punct">&gt;</span>External link<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"page.html"</span><span class="punct">&gt;</span>Internal link<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"#section"</span><span class="punct">&gt;</span>Link to section on same page<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"mailto:email@example.com"</span><span class="punct">&gt;</span>Email link<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"tel:+1234567890"</span><span class="punct">&gt;</span>Phone link<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
 
-          <div class="card">
-            <div class="card-title">Nested Lists</div>
-            <p>
-              Lists can be nested inside <code>&lt;li&gt;</code> for sub-items.
-            </p>
-            <pre><span class="t">&lt;ul&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">Frontend</span>
-    <span class="t">&lt;ul&gt;</span>
-      <span class="t">&lt;li&gt;</span><span class="tx">HTML</span><span class="t">&lt;/li&gt;</span>
-      <span class="t">&lt;li&gt;</span><span class="tx">CSS</span><span class="t">&lt;/li&gt;</span>
-    <span class="t">&lt;/ul&gt;</span>
-  <span class="t">&lt;/li&gt;</span>
-  <span class="t">&lt;li&gt;</span><span class="tx">Backend</span><span class="t">&lt;/li&gt;</span>
-<span class="t">&lt;/ul&gt;</span></pre>
-          </div>
-        </div>
-      </section>
+<span class="comment">// Link Attributes</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"https://example.com"</span> <span class="attrname">target</span>=<span class="attrval">"_blank"</span> <span class="attrname">rel</span>=<span class="attrval">"noopener"</span><span class="punct">&gt;</span>Opens in new tab<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"document.pdf"</span> <span class="attrname">download</span><span class="punct">&gt;</span>Download link<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"#"</span> <span class="attrname">title</span>=<span class="attrval">"Tooltip text"</span><span class="punct">&gt;</span>Link with tooltip<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span></code></pre>
 
-      <!-- ═══════════════ 05 TABLES ═══════════════ -->
-      <section class="chapter" id="tables">
-        <div class="chapter-label">
-          <span class="chapter-num">05</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Tables</h2>
-        <p class="chapter-desc">
-          Displaying tabular data — never use tables for layout!
-        </p>
+    <h2 id="media"><span class="num">06</span>Working with Media Tags</h2>
+    <ul>
+      <li><strong>Image (<code>img</code>)</strong>: Adds images.</li>
+      <li><strong>Video (<code>video</code>)</strong>: Embeds videos.</li>
+      <li><strong>Audio (<code>audio</code>)</strong>: Embeds audio files.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">img</span> <span class="attrname">src</span>=<span class="attrval">"image.jpg"</span> <span class="attrname">alt</span>=<span class="attrval">"A beautiful image"</span> <span class="attrname">width</span>=<span class="attrval">"300"</span> <span class="attrname">height</span>=<span class="attrval">"200"</span> <span class="punct">/&gt;</span>
+<span class="punct">&lt;</span><span class="tag">video</span> <span class="attrname">controls</span> <span class="attrname">width</span>=<span class="attrval">"320"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">source</span> <span class="attrname">src</span>=<span class="attrval">"video.mp4"</span> <span class="attrname">type</span>=<span class="attrval">"video/mp4"</span> <span class="punct">/&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">video</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">audio</span> <span class="attrname">controls</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">source</span> <span class="attrname">src</span>=<span class="attrval">"audio.mp3"</span> <span class="attrname">type</span>=<span class="attrval">"audio/mpeg"</span> <span class="punct">/&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">audio</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">Full Table Structure</div>
-            <pre><span class="t">&lt;table&gt;</span>
-  <span class="t">&lt;caption&gt;</span><span class="tx">Student Grades</span><span class="t">&lt;/caption&gt;</span>
-  <span class="t">&lt;thead&gt;</span>
-    <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span><span class="tx">Name</span><span class="t">&lt;/th&gt;</span>
-      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span><span class="tx">Score</span><span class="t">&lt;/th&gt;</span>
-    <span class="t">&lt;/tr&gt;</span>
-  <span class="t">&lt;/thead&gt;</span>
-  <span class="t">&lt;tbody&gt;</span>
-    <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">Alice</span><span class="t">&lt;/td&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">95</span><span class="t">&lt;/td&gt;</span>
-    <span class="t">&lt;/tr&gt;</span>
-    <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">Bob</span><span class="t">&lt;/td&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">88</span><span class="t">&lt;/td&gt;</span>
-    <span class="t">&lt;/tr&gt;</span>
-  <span class="t">&lt;/tbody&gt;</span>
-  <span class="t">&lt;tfoot&gt;</span>
-    <span class="t">&lt;tr&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">Average</span><span class="t">&lt;/td&gt;</span>
-      <span class="t">&lt;td&gt;</span><span class="tx">91.5</span><span class="t">&lt;/td&gt;</span>
-    <span class="t">&lt;/tr&gt;</span>
-  <span class="t">&lt;/tfoot&gt;</span>
-<span class="t">&lt;/table&gt;</span></pre>
-          </div>
+    <h2 id="attributes"><span class="num">07</span>HTML Attributes</h2>
+    <p>Attributes add properties to elements. Examples:</p>
+    <ul>
+      <li><code>href</code>: Link destination (anchor).</li>
+      <li><code>target</code>: Specifies where to open a link.</li>
+      <li><code>alt</code>: Alternate text for images.</li>
+      <li><code>src</code>: Source file for media.</li>
+      <li><code>width</code>, <code>height</code>: Dimensions for elements.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"https://example.com"</span> <span class="attrname">target</span>=<span class="attrval">"_blank"</span><span class="punct">&gt;</span>Open Example in a new tab<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">img</span> <span class="attrname">src</span>=<span class="attrval">"image.jpg"</span> <span class="attrname">alt</span>=<span class="attrval">"An image"</span> <span class="attrname">width</span>=<span class="attrval">"400"</span> <span class="attrname">height</span>=<span class="attrval">"300"</span> <span class="punct">/&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">Spanning Cells</div>
-            <p>
-              Use <code>colspan</code> and <code>rowspan</code> to merge cells.
-            </p>
-            <pre><span class="cm">&lt;!-- Span across 2 columns --&gt;</span>
-<span class="t">&lt;td</span> <span class="a">colspan</span>=<span class="v">"2"</span><span class="t">&gt;</span><span class="tx">Merged cell</span><span class="t">&lt;/td&gt;</span>
+    <h2 id="navigating"><span class="num">08</span>Navigating Pages and Sections</h2>
+    <ul>
+      <li>Use <code>anchor</code> tags to link between pages or sections within a page.</li>
+      <li>Add <code>id</code> attributes to target sections.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"#section1"</span><span class="punct">&gt;</span>Go to Section 1<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">a</span> <span class="attrname">href</span>=<span class="attrval">"page2.html"</span><span class="punct">&gt;</span>Go to another page<span class="punct">&lt;/</span><span class="tag">a</span><span class="punct">&gt;</span>
 
-<span class="cm">&lt;!-- Span across 2 rows --&gt;</span>
-<span class="t">&lt;td</span> <span class="a">rowspan</span>=<span class="v">"2"</span><span class="t">&gt;</span><span class="tx">Tall cell</span><span class="t">&lt;/td&gt;</span></pre>
-          </div>
-        </div>
-      </section>
+<span class="punct">&lt;</span><span class="tag">h2</span> <span class="attrname">id</span>=<span class="attrval">"section1"</span><span class="punct">&gt;</span>Section 1<span class="punct">&lt;/</span><span class="tag">h2</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>This is Section 1.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span></code></pre>
 
-      <!-- ═══════════════ 06 FORMS ═══════════════ -->
-      <section class="chapter" id="forms">
-        <div class="chapter-label">
-          <span class="chapter-num">06</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Forms</h2>
-        <p class="chapter-desc">
-          Collecting user input — the backbone of interactive web.
-        </p>
+    <h2 id="comments"><span class="num">09</span>Commenting Code in HTML</h2>
+    <p>Comments are ignored by browsers and useful for notes.</p>
+    <pre><code><span class="comment">&lt;!-- This is a comment --&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>This is visible text.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">
-              Form Structure <span class="tag-badge">&lt;form&gt;</span>
-            </div>
-            <pre><span class="t">&lt;form</span> <span class="a">action</span>=<span class="v">"/submit"</span> <span class="a">method</span>=<span class="v">"post"</span><span class="t">&gt;</span>
-  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"name"</span><span class="t">&gt;</span><span class="tx">Your Name</span><span class="t">&lt;/label&gt;</span>
-  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"name"</span> <span class="a">name</span>=<span class="v">"name"</span> <span class="a">required</span><span class="t">/&gt;</span>
-  <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span><span class="tx">Send</span><span class="t">&lt;/button&gt;</span>
-<span class="t">&lt;/form&gt;</span></pre>
-            <div class="callout">
-              <strong>Tip:</strong> Always link
-              <code>&lt;label for="id"&gt;</code> to
-              <code>&lt;input id="..."&gt;</code> — it improves accessibility
-              and click area.
-            </div>
-          </div>
+    <hr />
+    <div class="eyebrow">Reference</div>
+    <h1 class="page-title" style="font-size:26px;">HTML Tags</h1>
 
-          <div class="card">
-            <div class="card-title">All Input Types</div>
-            <table>
-              <tr>
-                <th>type=</th>
-                <th>What it does</th>
-              </tr>
-              <tr>
-                <td>text</td>
-                <td>Single-line text</td>
-              </tr>
-              <tr>
-                <td>email</td>
-                <td>Email with validation</td>
-              </tr>
-              <tr>
-                <td>password</td>
-                <td>Masked text</td>
-              </tr>
-              <tr>
-                <td>number</td>
-                <td>Numeric spinner</td>
-              </tr>
-              <tr>
-                <td>tel</td>
-                <td>Telephone (no validation)</td>
-              </tr>
-              <tr>
-                <td>url</td>
-                <td>URL with validation</td>
-              </tr>
-              <tr>
-                <td>date</td>
-                <td>Date picker</td>
-              </tr>
-              <tr>
-                <td>time</td>
-                <td>Time picker</td>
-              </tr>
-              <tr>
-                <td>range</td>
-                <td>Slider</td>
-              </tr>
-              <tr>
-                <td>color</td>
-                <td>Color picker</td>
-              </tr>
-              <tr>
-                <td>checkbox</td>
-                <td>Multi-select tick boxes</td>
-              </tr>
-              <tr>
-                <td>radio</td>
-                <td>Single choice from group</td>
-              </tr>
-              <tr>
-                <td>file</td>
-                <td>File upload</td>
-              </tr>
-              <tr>
-                <td>hidden</td>
-                <td>Data sent but not shown</td>
-              </tr>
-              <tr>
-                <td>submit</td>
-                <td>Submit button</td>
-              </tr>
-              <tr>
-                <td>reset</td>
-                <td>Reset all fields</td>
-              </tr>
-              <tr>
-                <td>search</td>
-                <td>Search box</td>
-              </tr>
-            </table>
-          </div>
+    <h2 id="div">Understanding and Using <code>div</code> Tags</h2>
+    <p>The <code>&lt;div&gt;</code> tag is a container used to group other HTML elements. It's commonly used for layout and styling purposes.</p>
+    <pre><code><span class="punct">&lt;</span><span class="tag">div</span> <span class="attrname">style</span>=<span class="attrval">"background-color: lightblue; padding: 10px;"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">h2</span><span class="punct">&gt;</span>Header inside a div<span class="punct">&lt;/</span><span class="tag">h2</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>This is some text inside a div.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">More Form Elements</div>
-            <pre><span class="cm">&lt;!-- Multi-line text --&gt;</span>
-<span class="t">&lt;textarea</span> <span class="a">name</span>=<span class="v">"message"</span> <span class="a">rows</span>=<span class="v">"4"</span><span class="t">&gt;&lt;/textarea&gt;</span>
+    <h2 id="semantic">Understanding Semantic Tags</h2>
+    <p>Semantic tags provide meaning to the structure of your HTML, improving readability and accessibility.</p>
+    <p><strong>Common Semantic Tags:</strong></p>
+    <ul>
+      <li><code>&lt;article&gt;</code>: Represents a self-contained piece of content (e.g., blog post).</li>
+      <li><code>&lt;section&gt;</code>: Represents a section of a document.</li>
+      <li><code>&lt;main&gt;</code>: Represents the main content of the document.</li>
+      <li><code>&lt;aside&gt;</code>: Sidebar or supplementary content.</li>
+      <li><code>&lt;form&gt;</code>: For user input.</li>
+      <li><code>&lt;footer&gt;</code>: Footer section of a page or article.</li>
+      <li><code>&lt;header&gt;</code>: Header section of a page or article.</li>
+      <li><code>&lt;details&gt;</code>: Disclosure widget that can show/hide additional information.</li>
+      <li><code>&lt;figure&gt;</code>: Used for self-contained content, like images or charts.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">header</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">h1</span><span class="punct">&gt;</span>Welcome to My Blog<span class="punct">&lt;/</span><span class="tag">h1</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">header</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">main</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">article</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">h2</span><span class="punct">&gt;</span>Article Title<span class="punct">&lt;/</span><span class="tag">h2</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>This is the content of the article.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">article</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">aside</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Related links or ads go here.<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">aside</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">main</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">footer</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Copyright &amp;copy; 2025<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">footer</span><span class="punct">&gt;</span></code></pre>
 
-<span class="cm">&lt;!-- Dropdown --&gt;</span>
-<span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"city"</span><span class="t">&gt;</span>
-  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">""</span><span class="t">&gt;</span><span class="tx">Choose…</span><span class="t">&lt;/option&gt;</span>
-  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"nyc"</span><span class="t">&gt;</span><span class="tx">New York</span><span class="t">&lt;/option&gt;</span>
-  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"lon"</span><span class="t">&gt;</span><span class="tx">London</span><span class="t">&lt;/option&gt;</span>
-<span class="t">&lt;/select&gt;</span>
+    <h2 id="block-inline">Differentiating Between Block and Inline Elements</h2>
+    <ul>
+      <li><strong>Block Elements</strong>: Take up the full width available (e.g., <code>div</code>, <code>p</code>, <code>h1</code>).</li>
+      <li><strong>Inline Elements</strong>: Only take up as much width as their content (e.g., <code>span</code>, <code>a</code>, <code>strong</code>).</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">div</span> <span class="attrname">style</span>=<span class="attrval">"border: 1px solid black;"</span><span class="punct">&gt;</span>This is a block element.<span class="punct">&lt;/</span><span class="tag">div</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">span</span> <span class="attrname">style</span>=<span class="attrval">"color: red;"</span><span class="punct">&gt;</span>This is an inline element.<span class="punct">&lt;/</span><span class="tag">span</span><span class="punct">&gt;</span></code></pre>
 
-<span class="cm">&lt;!-- Group related fields --&gt;</span>
-<span class="t">&lt;fieldset&gt;</span>
-  <span class="t">&lt;legend&gt;</span><span class="tx">Shipping Info</span><span class="t">&lt;/legend&gt;</span>
-  <span class="cm">&lt;!-- inputs... --&gt;</span>
-<span class="t">&lt;/fieldset&gt;</span></pre>
-          </div>
+    <h2 id="formatting">Text Formatting Tags in HTML</h2>
+    <p>Used to style or format text directly.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tag</th><th>Purpose</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>&lt;b&gt;</code></td><td>Bold text</td><td><code>&lt;b&gt;Bold Text&lt;/b&gt;</code></td></tr>
+          <tr><td><code>&lt;strong&gt;</code></td><td>Strong emphasis</td><td><code>&lt;strong&gt;Strong Text&lt;/strong&gt;</code></td></tr>
+          <tr><td><code>&lt;i&gt;</code></td><td>Italic text</td><td><code>&lt;i&gt;Italic Text&lt;/i&gt;</code></td></tr>
+          <tr><td><code>&lt;small&gt;</code></td><td>Smaller text</td><td><code>&lt;small&gt;Smaller Text&lt;/small&gt;</code></td></tr>
+          <tr><td><code>&lt;ins&gt;</code></td><td>Inserted text (underlined)</td><td><code>&lt;ins&gt;Inserted Text&lt;/ins&gt;</code></td></tr>
+          <tr><td><code>&lt;sub&gt;</code></td><td>Subscript text</td><td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td></tr>
+          <tr><td><code>&lt;sup&gt;</code></td><td>Superscript text</td><td><code>E = mc&lt;sup&gt;2&lt;/sup&gt;</code></td></tr>
+          <tr><td><code>&lt;del&gt;</code></td><td>Deleted (strikethrough)</td><td><code>&lt;del&gt;Deleted Text&lt;/del&gt;</code></td></tr>
+          <tr><td><code>&lt;mark&gt;</code></td><td>Highlighted text</td><td><code>&lt;mark&gt;Important Text&lt;/mark&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </div>
 
-          <div class="card">
-            <div class="card-title">Input Attributes</div>
-            <table>
-              <tr>
-                <th>Attribute</th>
-                <th>Effect</th>
-              </tr>
-              <tr>
-                <td>required</td>
-                <td>Field must be filled</td>
-              </tr>
-              <tr>
-                <td>placeholder</td>
-                <td>Hint text inside field</td>
-              </tr>
-              <tr>
-                <td>value</td>
-                <td>Default/pre-filled value</td>
-              </tr>
-              <tr>
-                <td>disabled</td>
-                <td>Grayed out, not submitted</td>
-              </tr>
-              <tr>
-                <td>readonly</td>
-                <td>Can't edit, is submitted</td>
-              </tr>
-              <tr>
-                <td>min / max</td>
-                <td>Range for number/date</td>
-              </tr>
-              <tr>
-                <td>maxlength</td>
-                <td>Character limit</td>
-              </tr>
-              <tr>
-                <td>pattern</td>
-                <td>Regex validation</td>
-              </tr>
-              <tr>
-                <td>autocomplete</td>
-                <td>Browser autofill hint</td>
-              </tr>
-              <tr>
-                <td>autofocus</td>
-                <td>Focus on page load</td>
-              </tr>
-              <tr>
-                <td>multiple</td>
-                <td>Allow multiple values (file/email)</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </section>
+    <h2 id="symbols">Working with HTML Symbols and Special Characters</h2>
+    <p>HTML provides entities for symbols and special characters.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Symbol / Character</th><th>Code</th><th>Output</th></tr></thead>
+        <tbody>
+          <tr><td>Copyright</td><td><code>&amp;copy;</code></td><td>©</td></tr>
+          <tr><td>Club</td><td><code>&amp;#9827;</code></td><td>♣</td></tr>
+          <tr><td>Left Arrow</td><td><code>&amp;larr;</code></td><td>←</td></tr>
+          <tr><td>Less Than</td><td><code>&amp;lt;</code></td><td>&lt;</td></tr>
+          <tr><td>Greater Than</td><td><code>&amp;gt;</code></td><td>&gt;</td></tr>
+          <tr><td>Ampersand</td><td><code>&amp;amp;</code></td><td>&amp;</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre><code><span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Copyright &amp;copy; 2025<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Symbol: &amp;#9827;<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">p</span><span class="punct">&gt;</span>Arrow: &amp;larr;<span class="punct">&lt;/</span><span class="tag">p</span><span class="punct">&gt;</span></code></pre>
 
-      <!-- ═══════════════ 07 SEMANTIC HTML ═══════════════ -->
-      <section class="chapter" id="semantic">
-        <div class="chapter-label">
-          <span class="chapter-num">07</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Semantic HTML5</h2>
-        <p class="chapter-desc">
-          Meaningful tags that describe content — critical for SEO and
-          accessibility.
-        </p>
+    <h2 id="tables">Working with HTML Tables</h2>
+    <p>Tables display data in rows and columns.</p>
+    <ul>
+      <li><code>&lt;table&gt;</code>: The table itself.</li>
+      <li><code>&lt;tr&gt;</code>: Table row.</li>
+      <li><code>&lt;td&gt;</code>: Table data (cell).</li>
+      <li><code>&lt;th&gt;</code>: Table header.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">table</span> <span class="attrname">border</span>=<span class="attrval">"1"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">thead</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">tr</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">th</span><span class="punct">&gt;</span>Header 1<span class="punct">&lt;/</span><span class="tag">th</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">th</span><span class="punct">&gt;</span>Header 2<span class="punct">&lt;/</span><span class="tag">th</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">th</span><span class="punct">&gt;</span>Header 3<span class="punct">&lt;/</span><span class="tag">th</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">tr</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">thead</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">tbody</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">tr</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 1<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 2<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 3<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">tr</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">tr</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 4<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 5<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span><span class="punct">&gt;</span>Data 6<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">tr</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">tbody</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">tfoot</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">tr</span><span class="punct">&gt;</span>
+      <span class="punct">&lt;</span><span class="tag">td</span> <span class="attrname">colspan</span>=<span class="attrval">"3"</span><span class="punct">&gt;</span>Footer content<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;/</span><span class="tag">tr</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">tfoot</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">table</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">Page Layout Elements</div>
-            <pre><span class="t">&lt;header&gt;</span>  <span class="cm">← site/section header, nav, logo</span>
-<span class="t">&lt;nav&gt;</span>     <span class="cm">← navigation links</span>
-<span class="t">&lt;main&gt;</span>    <span class="cm">← primary content (one per page)</span>
-<span class="t">&lt;article&gt;</span> <span class="cm">← self-contained content (blog post)</span>
-<span class="t">&lt;section&gt;</span> <span class="cm">← thematic grouping with a heading</span>
-<span class="t">&lt;aside&gt;</span>   <span class="cm">← sidebar / tangentially related</span>
-<span class="t">&lt;footer&gt;</span>  <span class="cm">← copyright, links, contact</span></pre>
-            <div class="callout">
-              <strong>Rule of thumb:</strong> Could you replace this with a
-              <code>&lt;div&gt;</code> and lose meaning? Then use the semantic
-              tag. Could not? Use <code>&lt;div&gt;</code>.
-            </div>
-          </div>
+    <h2 id="table-attrs">More Attributes and Tags Related to Tables</h2>
+    <ul>
+      <li><code>colspan</code>: Merges columns.</li>
+      <li><code>rowspan</code>: Merges rows.</li>
+      <li><code>border</code>: Defines the border width.</li>
+      <li><code>cellpadding</code>: Space between cell content and border.</li>
+      <li><code>cellspacing</code>: Space between cells.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">table</span> <span class="attrname">border</span>=<span class="attrval">"1"</span> <span class="attrname">cellpadding</span>=<span class="attrval">"10"</span> <span class="attrname">cellspacing</span>=<span class="attrval">"0"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">td</span> <span class="attrname">colspan</span>=<span class="attrval">"2"</span><span class="punct">&gt;</span>Spans 2 columns<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">td</span> <span class="attrname">rowspan</span>=<span class="attrval">"2"</span><span class="punct">&gt;</span>Spans 2 rows<span class="punct">&lt;/</span><span class="tag">td</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">table</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">Semantic Inline & Content</div>
-            <table>
-              <tr>
-                <th>Tag</th>
-                <th>Meaning</th>
-              </tr>
-              <tr>
-                <td>&lt;time&gt;</td>
-                <td>Date/time with machine-readable datetime attr</td>
-              </tr>
-              <tr>
-                <td>&lt;figure&gt;</td>
-                <td>Self-contained media (image, chart, code)</td>
-              </tr>
-              <tr>
-                <td>&lt;figcaption&gt;</td>
-                <td>Caption for a &lt;figure&gt;</td>
-              </tr>
-              <tr>
-                <td>&lt;details&gt;</td>
-                <td>Expandable disclosure widget</td>
-              </tr>
-              <tr>
-                <td>&lt;summary&gt;</td>
-                <td>Visible heading for &lt;details&gt;</td>
-              </tr>
-              <tr>
-                <td>&lt;dialog&gt;</td>
-                <td>Modal or popup dialog box</td>
-              </tr>
-              <tr>
-                <td>&lt;progress&gt;</td>
-                <td>Task progress bar</td>
-              </tr>
-              <tr>
-                <td>&lt;meter&gt;</td>
-                <td>Scalar measurement within range</td>
-              </tr>
-            </table>
-          </div>
+    <hr />
+    <div class="eyebrow">Reference</div>
+    <h1 class="page-title" style="font-size:26px;">HTML Forms and Inputs</h1>
 
-          <div class="card">
-            <div class="card-title">Typical Page Structure</div>
-            <pre><span class="t">&lt;body&gt;</span>
-  <span class="t">&lt;header&gt;</span>
-    <span class="t">&lt;nav&gt;</span><span class="tx">…</span><span class="t">&lt;/nav&gt;</span>
-  <span class="t">&lt;/header&gt;</span>
+    <h2 id="forms-what">What is a Form and Why is it Important?</h2>
+    <p>A <strong>form</strong> in HTML is used to collect user inputs and send them to a server for processing. It is essential for functionalities like user registration, login, feedback, and payment submissions. Forms bridge the gap between the user interface and backend processing, enabling interactive web applications.</p>
 
-  <span class="t">&lt;main&gt;</span>
-    <span class="t">&lt;article&gt;</span>
-      <span class="t">&lt;h1&gt;</span><span class="tx">Post Title</span><span class="t">&lt;/h1&gt;</span>
-      <span class="t">&lt;section&gt;</span><span class="tx">…</span><span class="t">&lt;/section&gt;</span>
-    <span class="t">&lt;/article&gt;</span>
-    <span class="t">&lt;aside&gt;</span><span class="tx">Related links</span><span class="t">&lt;/aside&gt;</span>
-  <span class="t">&lt;/main&gt;</span>
+    <h2 id="forms-simple">Creating a Simple Form</h2>
+    <p>HTML forms are created using various elements to capture input:</p>
+    <ul>
+      <li><strong>&lt;form&gt;</strong>: The container for the form.</li>
+      <li><strong>&lt;input&gt;</strong>: Used for various types of input fields.</li>
+      <li><strong>&lt;textarea&gt;</strong>: Multiline input field.</li>
+      <li><strong>&lt;select&gt;</strong>: Dropdown menu.</li>
+      <li><strong>&lt;button&gt;</strong>: Button for submission or custom actions.</li>
+      <li><strong>&lt;label&gt;</strong>: Labels to describe inputs.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">form</span> <span class="attrname">action</span>=<span class="attrval">"/submit"</span> <span class="attrname">method</span>=<span class="attrval">"POST"</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"name"</span><span class="punct">&gt;</span>Name:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"text"</span> <span class="attrname">id</span>=<span class="attrval">"name"</span> <span class="attrname">name</span>=<span class="attrval">"username"</span> <span class="attrname">placeholder</span>=<span class="attrval">"Enter your name"</span> <span class="attrname">required</span> <span class="punct">/&gt;</span>
 
-  <span class="t">&lt;footer&gt;</span><span class="tx">© 2026</span><span class="t">&lt;/footer&gt;</span>
-<span class="t">&lt;/body&gt;</span></pre>
-          </div>
-        </div>
-      </section>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"message"</span><span class="punct">&gt;</span>Message:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">textarea</span> <span class="attrname">id</span>=<span class="attrval">"message"</span> <span class="attrname">name</span>=<span class="attrval">"usermessage"</span> <span class="attrname">rows</span>=<span class="attrval">"4"</span> <span class="attrname">cols</span>=<span class="attrval">"50"</span><span class="punct">&gt;&lt;/</span><span class="tag">textarea</span><span class="punct">&gt;</span>
 
-      <!-- ═══════════════ 08 MEDIA ═══════════════ -->
-      <section class="chapter" id="media">
-        <div class="chapter-label">
-          <span class="chapter-num">08</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Media Elements</h2>
-        <p class="chapter-desc">
-          Audio, video, iframes, and responsive images.
-        </p>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"color"</span><span class="punct">&gt;</span>Favorite Color:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"color"</span> <span class="attrname">id</span>=<span class="attrval">"color"</span> <span class="attrname">name</span>=<span class="attrval">"usercolor"</span> <span class="punct">/&gt;</span>
 
-        <div class="cards two">
-          <div class="card">
-            <div class="card-title">
-              Video <span class="tag-badge">&lt;video&gt;</span>
-            </div>
-            <pre><span class="t">&lt;video</span>
-  <span class="a">controls</span>
-  <span class="a">autoplay</span>
-  <span class="a">muted</span>
-  <span class="a">loop</span>
-  <span class="a">width</span>=<span class="v">"640"</span>
-  <span class="a">poster</span>=<span class="v">"thumb.jpg"</span>
-<span class="t">&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.mp4"</span> <span class="a">type</span>=<span class="v">"video/mp4"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.webm"</span> <span class="a">type</span>=<span class="v">"video/webm"</span><span class="t">/&gt;</span>
-  <span class="tx">Your browser doesn't support video.</span>
-<span class="t">&lt;/video&gt;</span></pre>
-          </div>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"country"</span><span class="punct">&gt;</span>Country:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">select</span> <span class="attrname">id</span>=<span class="attrval">"country"</span> <span class="attrname">name</span>=<span class="attrval">"usercountry"</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">option</span> <span class="attrname">value</span>=<span class="attrval">"usa"</span><span class="punct">&gt;</span>USA<span class="punct">&lt;/</span><span class="tag">option</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">option</span> <span class="attrname">value</span>=<span class="attrval">"uk"</span><span class="punct">&gt;</span>UK<span class="punct">&lt;/</span><span class="tag">option</span><span class="punct">&gt;</span>
+    <span class="punct">&lt;</span><span class="tag">option</span> <span class="attrname">value</span>=<span class="attrval">"india"</span><span class="punct">&gt;</span>India<span class="punct">&lt;/</span><span class="tag">option</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;/</span><span class="tag">select</span><span class="punct">&gt;</span>
 
-          <div class="card">
-            <div class="card-title">
-              Audio <span class="tag-badge">&lt;audio&gt;</span>
-            </div>
-            <pre><span class="t">&lt;audio</span> <span class="a">controls</span><span class="t">&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"track.mp3"</span> <span class="a">type</span>=<span class="v">"audio/mpeg"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"track.ogg"</span> <span class="a">type</span>=<span class="v">"audio/ogg"</span><span class="t">/&gt;</span>
-<span class="t">&lt;/audio&gt;</span></pre>
-          </div>
+  <span class="punct">&lt;</span><span class="tag">button</span> <span class="attrname">type</span>=<span class="attrval">"submit"</span><span class="punct">&gt;</span>Submit<span class="punct">&lt;/</span><span class="tag">button</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">form</span><span class="punct">&gt;</span></code></pre>
 
-          <div class="card">
-            <div class="card-title">
-              Iframe <span class="tag-badge">&lt;iframe&gt;</span>
-            </div>
-            <p>Embeds another page (YouTube, maps, etc.).</p>
-            <pre><span class="t">&lt;iframe</span>
-  <span class="a">src</span>=<span class="v">"https://www.youtube.com/embed/xyz"</span>
-  <span class="a">width</span>=<span class="v">"560"</span>
-  <span class="a">height</span>=<span class="v">"315"</span>
-  <span class="a">allowfullscreen</span>
-  <span class="a">loading</span>=<span class="v">"lazy"</span>
-  <span class="a">title</span>=<span class="v">"Tutorial video"</span>
-<span class="t">&gt;&lt;/iframe&gt;</span></pre>
-          </div>
+    <h2 id="input-types">Types of Input Fields</h2>
+    <p>The <code>&lt;input&gt;</code> tag supports many types of fields:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>Description</th><th>Example Code</th></tr></thead>
+        <tbody>
+          <tr><td><code>text</code></td><td>Single-line text input</td><td><code>&lt;input type="text"&gt;</code></td></tr>
+          <tr><td><code>checkbox</code></td><td>Checkbox for multiple selections</td><td><code>&lt;input type="checkbox"&gt;</code></td></tr>
+          <tr><td><code>radio</code></td><td>Radio button for single selection</td><td><code>&lt;input type="radio" name="gender"&gt;</code></td></tr>
+          <tr><td><code>color</code></td><td>Color picker</td><td><code>&lt;input type="color"&gt;</code></td></tr>
+          <tr><td><code>file</code></td><td>File upload</td><td><code>&lt;input type="file"&gt;</code></td></tr>
+          <tr><td><code>tel</code></td><td>Telephone number input</td><td><code>&lt;input type="tel"&gt;</code></td></tr>
+          <tr><td><code>date</code></td><td>Date picker</td><td><code>&lt;input type="date"&gt;</code></td></tr>
+          <tr><td><code>number</code></td><td>Numeric input</td><td><code>&lt;input type="number"&gt;</code></td></tr>
+          <tr><td><code>range</code></td><td>Slider input</td><td><code>&lt;input type="range" min="0" max="100"&gt;</code></td></tr>
+          <tr><td><code>submit</code></td><td>Submit button</td><td><code>&lt;input type="submit" value="Submit"&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre><code><span class="punct">&lt;</span><span class="tag">form</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"email"</span><span class="punct">&gt;</span>Email:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"email"</span> <span class="attrname">id</span>=<span class="attrval">"email"</span> <span class="attrname">name</span>=<span class="attrval">"email"</span> <span class="attrname">placeholder</span>=<span class="attrval">"Enter your email"</span> <span class="attrname">required</span> <span class="punct">/&gt;</span>
 
-          <div class="card">
-            <div class="card-title">
-              Responsive Images <span class="tag-badge">&lt;picture&gt;</span>
-            </div>
-            <p>
-              Serve different images based on screen size or format support.
-            </p>
-            <pre><span class="t">&lt;picture&gt;</span>
-  <span class="t">&lt;source</span>
-    <span class="a">srcset</span>=<span class="v">"hero-large.webp"</span>
-    <span class="a">media</span>=<span class="v">"(min-width: 800px)"</span>
-    <span class="a">type</span>=<span class="v">"image/webp"</span>
-  <span class="t">/&gt;</span>
-  <span class="t">&lt;source</span> <span class="a">srcset</span>=<span class="v">"hero-small.jpg"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"hero-small.jpg"</span> <span class="a">alt</span>=<span class="v">"Hero"</span><span class="t">/&gt;</span>
-<span class="t">&lt;/picture&gt;</span></pre>
-          </div>
-        </div>
-      </section>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"password"</span><span class="punct">&gt;</span>Password:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"password"</span> <span class="attrname">id</span>=<span class="attrval">"password"</span> <span class="attrname">name</span>=<span class="attrval">"password"</span> <span class="punct">/&gt;</span>
 
-      <!-- ═══════════════ 09 HEAD & META ═══════════════ -->
-      <section class="chapter" id="meta">
-        <div class="chapter-label">
-          <span class="chapter-num">09</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Head & Meta Tags</h2>
-        <p class="chapter-desc">
-          Everything that goes in <code>&lt;head&gt;</code> — invisible but
-          vital.
-        </p>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"gender"</span><span class="punct">&gt;</span>Gender:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"radio"</span> <span class="attrname">name</span>=<span class="attrval">"gender"</span> <span class="attrname">value</span>=<span class="attrval">"male"</span> <span class="punct">/&gt;</span> Male
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"radio"</span> <span class="attrname">name</span>=<span class="attrval">"gender"</span> <span class="attrname">value</span>=<span class="attrval">"female"</span> <span class="punct">/&gt;</span> Female
 
-        <div class="cards">
-          <div class="card">
-            <div class="card-title">Essential Head Tags</div>
-            <pre><span class="t">&lt;head&gt;</span>
-  <span class="cm">&lt;!-- Character encoding --&gt;</span>
-  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"subscribe"</span><span class="punct">&gt;</span>Subscribe:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"checkbox"</span> <span class="attrname">id</span>=<span class="attrval">"subscribe"</span> <span class="attrname">name</span>=<span class="attrval">"subscribe"</span> <span class="attrname">checked</span> <span class="punct">/&gt;</span>
 
-  <span class="cm">&lt;!-- Responsive viewport --&gt;</span>
-  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span>
-        <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"birthday"</span><span class="punct">&gt;</span>Birthday:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"date"</span> <span class="attrname">id</span>=<span class="attrval">"birthday"</span> <span class="attrname">name</span>=<span class="attrval">"birthday"</span> <span class="punct">/&gt;</span>
 
-  <span class="cm">&lt;!-- Page title (tab + SEO) --&gt;</span>
-  <span class="t">&lt;title&gt;</span><span class="tx">My Awesome Page</span><span class="t">&lt;/title&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">button</span> <span class="attrname">type</span>=<span class="attrval">"submit"</span><span class="punct">&gt;</span>Submit<span class="punct">&lt;/</span><span class="tag">button</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">form</span><span class="punct">&gt;</span></code></pre>
 
-  <span class="cm">&lt;!-- SEO description --&gt;</span>
-  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"description"</span>
-        <span class="a">content</span>=<span class="v">"A short description for search engines."</span><span class="t">/&gt;</span>
+    <h2 id="form-attrs">Attributes of Form Elements</h2>
+    <p><strong>Key Attributes for &lt;form&gt;:</strong></p>
+    <ul>
+      <li><strong>method</strong>: HTTP method (<code>GET</code> or <code>POST</code>).</li>
+      <li><strong>action</strong>: URL where the form data is sent.</li>
+      <li><strong>target</strong>: Specifies how to display the response (<code>_self</code>, <code>_blank</code>).</li>
+      <li><strong>novalidate</strong>: Disables HTML5 validation.</li>
+      <li><strong>enctype</strong>: Data encoding type (<code>application/x-www-form-urlencoded</code>, <code>multipart/form-data</code>).</li>
+    </ul>
+    <p><strong>Key Attributes for Inputs:</strong></p>
+    <ul>
+      <li><strong>name</strong>: Identifies the form data when submitted.</li>
+      <li><strong>required</strong>: Makes the field mandatory.</li>
+      <li><strong>placeholder</strong>: Hint text inside the input field.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">form</span>
+  <span class="attrname">action</span>=<span class="attrval">"/submit-data"</span>
+  <span class="attrname">method</span>=<span class="attrval">"POST"</span>
+  <span class="attrname">enctype</span>=<span class="attrval">"multipart/form-data"</span>
+  <span class="attrname">target</span>=<span class="attrval">"_blank"</span>
+<span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"username"</span><span class="punct">&gt;</span>Username:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"text"</span> <span class="attrname">id</span>=<span class="attrval">"username"</span> <span class="attrname">name</span>=<span class="attrval">"username"</span> <span class="attrname">placeholder</span>=<span class="attrval">"Enter your username"</span> <span class="attrname">required</span> <span class="punct">/&gt;</span>
 
-  <span class="cm">&lt;!-- Open Graph (social sharing) --&gt;</span>
-  <span class="t">&lt;meta</span> <span class="a">property</span>=<span class="v">"og:title"</span> <span class="a">content</span>=<span class="v">"Page Title"</span><span class="t">/&gt;</span>
-  <span class="t">&lt;meta</span> <span class="a">property</span>=<span class="v">"og:image"</span> <span class="a">content</span>=<span class="v">"preview.jpg"</span><span class="t">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"profile-pic"</span><span class="punct">&gt;</span>Profile Picture:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"file"</span> <span class="attrname">id</span>=<span class="attrval">"profile-pic"</span> <span class="attrname">name</span>=<span class="attrval">"profilepic"</span> <span class="punct">/&gt;</span>
 
-  <span class="cm">&lt;!-- Link CSS --&gt;</span>
-  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"stylesheet"</span> <span class="a">href</span>=<span class="v">"styles.css"</span><span class="t">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">label</span> <span class="attrname">for</span>=<span class="attrval">"range"</span><span class="punct">&gt;</span>Set Range:<span class="punct">&lt;/</span><span class="tag">label</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">input</span> <span class="attrname">type</span>=<span class="attrval">"range"</span> <span class="attrname">id</span>=<span class="attrval">"range"</span> <span class="attrname">name</span>=<span class="attrval">"range"</span> <span class="attrname">min</span>=<span class="attrval">"1"</span> <span class="attrname">max</span>=<span class="attrval">"10"</span> <span class="punct">/&gt;</span>
 
-  <span class="cm">&lt;!-- Favicon --&gt;</span>
-  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"icon"</span> <span class="a">href</span>=<span class="v">"favicon.ico"</span><span class="t">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">button</span> <span class="attrname">type</span>=<span class="attrval">"submit"</span><span class="punct">&gt;</span>Upload<span class="punct">&lt;/</span><span class="tag">button</span><span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">form</span><span class="punct">&gt;</span></code></pre>
 
-  <span class="cm">&lt;!-- JS (defer = load after HTML) --&gt;</span>
-  <span class="t">&lt;script</span> <span class="a">src</span>=<span class="v">"app.js"</span> <span class="a">defer</span><span class="t">&gt;&lt;/script&gt;</span>
-<span class="t">&lt;/head&gt;</span></pre>
-          </div>
-        </div>
-      </section>
+    <hr />
+    <div class="eyebrow">Reference</div>
+    <h1 class="page-title" style="font-size:26px;">Media Tags in HTML</h1>
 
-      <!-- ═══════════════ 10 GLOBAL ATTRIBUTES ═══════════════ -->
-      <section class="chapter" id="global">
-        <div class="chapter-label">
-          <span class="chapter-num">10</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Global Attributes</h2>
-        <p class="chapter-desc">These attributes work on any HTML element.</p>
+    <h2 id="audio-video">Understanding Audio and Video Tags</h2>
+    <p>The <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags in HTML are used to embed multimedia content like sound and video into a webpage.</p>
+    <ul>
+      <li><strong>&lt;audio&gt;</strong>: Embeds audio.</li>
+      <li><strong>&lt;video&gt;</strong>: Embeds video.</li>
+    </ul>
+    <pre><code><span class="punct">&lt;</span><span class="tag">audio</span> <span class="attrname">src</span>=<span class="attrval">"audio.mp3"</span> <span class="attrname">controls</span><span class="punct">&gt;&lt;/</span><span class="tag">audio</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">video</span> <span class="attrname">src</span>=<span class="attrval">"video.mp4"</span> <span class="attrname">width</span>=<span class="attrval">"400"</span> <span class="attrname">controls</span><span class="punct">&gt;&lt;/</span><span class="tag">video</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards">
-          <div class="card">
-            <table>
-              <tr>
-                <th>Attribute</th>
-                <th>Purpose</th>
-              </tr>
-              <tr>
-                <td>id</td>
-                <td>Unique identifier — used by CSS, JS, and anchor links</td>
-              </tr>
-              <tr>
-                <td>class</td>
-                <td>One or more CSS class names (space-separated)</td>
-              </tr>
-              <tr>
-                <td>style</td>
-                <td>Inline CSS — use sparingly</td>
-              </tr>
-              <tr>
-                <td>title</td>
-                <td>Tooltip on hover</td>
-              </tr>
-              <tr>
-                <td>lang</td>
-                <td>Language of element's content</td>
-              </tr>
-              <tr>
-                <td>dir</td>
-                <td>Text direction: ltr / rtl / auto</td>
-              </tr>
-              <tr>
-                <td>hidden</td>
-                <td>Hides element (like display:none)</td>
-              </tr>
-              <tr>
-                <td>tabindex</td>
-                <td>Keyboard focus order (0 = natural, -1 = skip)</td>
-              </tr>
-              <tr>
-                <td>contenteditable</td>
-                <td>Makes element directly editable</td>
-              </tr>
-              <tr>
-                <td>draggable</td>
-                <td>Enable HTML drag-and-drop API</td>
-              </tr>
-              <tr>
-                <td>spellcheck</td>
-                <td>Enable/disable browser spell check</td>
-              </tr>
-              <tr>
-                <td>data-*</td>
-                <td>Custom data attributes for JS hooks</td>
-              </tr>
-              <tr>
-                <td>aria-*</td>
-                <td>Accessibility roles and properties</td>
-              </tr>
-              <tr>
-                <td>role</td>
-                <td>ARIA landmark role (button, alert, …)</td>
-              </tr>
-            </table>
-            <pre
-              style="margin-top: 16px"
-            ><span class="cm">&lt;!-- data-* example --&gt;</span>
-<span class="t">&lt;button</span>
-  <span class="a">data-product-id</span>=<span class="v">"42"</span>
-  <span class="a">data-category</span>=<span class="v">"shoes"</span>
-<span class="t">&gt;</span><span class="tx">Add to cart</span><span class="t">&lt;/button&gt;</span>
+    <h2 id="media-attrs">Attributes of Media Tags</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>src</code></td><td>Specifies the media file location.</td><td><code>&lt;audio src="song.mp3"&gt;</code></td></tr>
+          <tr><td><code>width</code></td><td>Sets the width of the media player (in pixels).</td><td><code>&lt;video src="video.mp4" width="600"&gt;</code></td></tr>
+          <tr><td><code>height</code></td><td>Sets the height of the media player (in pixels).</td><td><code>&lt;video src="video.mp4" height="300"&gt;</code></td></tr>
+          <tr><td><code>alt</code></td><td>Alternative text for accessibility or fallback.</td><td><code>&lt;img src="image.jpg" alt="Image"&gt;</code></td></tr>
+          <tr><td><code>muted</code></td><td>Mutes the audio or video by default.</td><td><code>&lt;video src="movie.mp4" muted&gt;</code></td></tr>
+          <tr><td><code>loop</code></td><td>Repeats the media file indefinitely.</td><td><code>&lt;audio src="song.mp3" loop&gt;</code></td></tr>
+          <tr><td><code>autoplay</code></td><td>Starts playing the media automatically (caution: can be intrusive).</td><td><code>&lt;video src="clip.mp4" autoplay&gt;</code></td></tr>
+          <tr><td><code>controls</code></td><td>Adds play, pause, and other controls for the user.</td><td><code>&lt;audio src="song.mp3" controls&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <pre><code><span class="punct">&lt;</span><span class="tag">audio</span> <span class="attrname">src</span>=<span class="attrval">"audio.mp3"</span> <span class="attrname">controls</span> <span class="attrname">loop</span><span class="punct">&gt;&lt;/</span><span class="tag">audio</span><span class="punct">&gt;</span>
+<span class="punct">&lt;</span><span class="tag">video</span> <span class="attrname">src</span>=<span class="attrval">"video.mp4"</span> <span class="attrname">width</span>=<span class="attrval">"600"</span> <span class="attrname">height</span>=<span class="attrval">"300"</span> <span class="attrname">controls</span> <span class="attrname">autoplay</span> <span class="attrname">muted</span><span class="punct">&gt;&lt;/</span><span class="tag">video</span><span class="punct">&gt;</span></code></pre>
 
-<span class="cm">&lt;!-- Access in JS --&gt;</span>
-<span class="tx">btn.dataset.productId  // "42"</span></pre>
-          </div>
-        </div>
-      </section>
+    <h2 id="source">Using the <code>&lt;source&gt;</code> Element for Alternative Media Files</h2>
+    <p>The <code>&lt;source&gt;</code> element is used inside <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> tags to specify multiple file formats, ensuring compatibility across different browsers.</p>
+    <pre><code><span class="punct">&lt;</span><span class="tag">video</span> <span class="attrname">width</span>=<span class="attrval">"600"</span> <span class="attrname">controls</span><span class="punct">&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">source</span> <span class="attrname">src</span>=<span class="attrval">"video.mp4"</span> <span class="attrname">type</span>=<span class="attrval">"video/mp4"</span> <span class="punct">/&gt;</span>
+  <span class="punct">&lt;</span><span class="tag">source</span> <span class="attrname">src</span>=<span class="attrval">"video.ogg"</span> <span class="attrname">type</span>=<span class="attrval">"video/ogg"</span> <span class="punct">/&gt;</span>
+  Your browser does not support the video tag.
+<span class="punct">&lt;/</span><span class="tag">video</span><span class="punct">&gt;</span></code></pre>
+    <p>In this example, the browser will try to play <code>video.mp4</code> first. If it doesn't support MP4, it will fallback to <code>video.ogg</code>.</p>
 
-      <!-- ═══════════════ 11 BEST PRACTICES ═══════════════ -->
-      <section class="chapter" id="bestpractice">
-        <div class="chapter-label">
-          <span class="chapter-num">11</span>
-          <div class="chapter-line"></div>
-        </div>
-        <h2>Best Practices</h2>
-        <p class="chapter-desc">
-          Write HTML that's accessible, performant, and maintainable.
-        </p>
+    <h2 id="iframe">Understanding the Concept of Using <code>&lt;iframe&gt;</code></h2>
+    <p>An <strong>iframe</strong> is used to embed another HTML document (e.g., a video, map, or website) within the current webpage.</p>
+    <p><strong>Common Uses:</strong></p>
+    <ul>
+      <li>Embedding YouTube videos.</li>
+      <li>Adding Google Maps.</li>
+      <li>Displaying external content like documents.</li>
+    </ul>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Attribute</th><th>Description</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><code>src</code></td><td>URL of the content to display.</td><td><code>&lt;iframe src="https://example.com"&gt;</code></td></tr>
+          <tr><td><code>width</code></td><td>Width of the iframe (in pixels or percentage).</td><td><code>&lt;iframe src="..." width="600"&gt;</code></td></tr>
+          <tr><td><code>height</code></td><td>Height of the iframe (in pixels or percentage).</td><td><code>&lt;iframe src="..." height="400"&gt;</code></td></tr>
+          <tr><td><code>allowfullscreen</code></td><td>Allows fullscreen mode for videos.</td><td><code>&lt;iframe src="..." allowfullscreen&gt;</code></td></tr>
+          <tr><td><code>frameborder</code></td><td>Sets the border width (deprecated, use CSS).</td><td><code>&lt;iframe src="..." frameborder="0"&gt;</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Example: Embedding a YouTube Video</h3>
+    <pre><code><span class="punct">&lt;</span><span class="tag">iframe</span>
+  <span class="attrname">width</span>=<span class="attrval">"560"</span>
+  <span class="attrname">height</span>=<span class="attrval">"315"</span>
+  <span class="attrname">src</span>=<span class="attrval">"https://www.youtube.com/embed/dQw4w9WgXcQ"</span>
+  <span class="attrname">title</span>=<span class="attrval">"YouTube video player"</span>
+  <span class="attrname">frameborder</span>=<span class="attrval">"0"</span>
+  <span class="attrname">allow</span>=<span class="attrval">"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"</span>
+  <span class="attrname">allowfullscreen</span>
+<span class="punct">&gt;</span>
+<span class="punct">&lt;/</span><span class="tag">iframe</span><span class="punct">&gt;</span></code></pre>
 
-        <div class="cards two">
-          <div class="card">
-            <div class="card-title">✅ Accessibility (a11y)</div>
-            <ul>
-              <li>Always include <code>alt</code> text on images</li>
-              <li>Use <code>&lt;label&gt;</code> linked to every input</li>
-              <li>Use semantic tags, not just <code>&lt;div&gt;</code></li>
-              <li>
-                Add <code>role</code> and <code>aria-*</code> where needed
-              </li>
-              <li>Ensure keyboard navigation works (tabindex)</li>
-              <li>Use sufficient color contrast in CSS</li>
-              <li>Avoid <code>autoplay</code> without <code>muted</code></li>
-            </ul>
-          </div>
+    <hr />
+    <h2 id="best-practices">HTML5 Best Practices</h2>
 
-          <div class="card">
-            <div class="card-title">⚡ Performance</div>
-            <ul>
-              <li>
-                Add <code>width</code>/<code>height</code> on images (prevents
-                CLS)
-              </li>
-              <li>Use <code>loading="lazy"</code> for off-screen images</li>
-              <li>
-                Put <code>&lt;script&gt;</code> at end of body or use
-                <code>defer</code>
-              </li>
-              <li>
-                Use <code>&lt;link rel="preload"&gt;</code> for critical assets
-              </li>
-              <li>Prefer WebP over JPEG/PNG for images</li>
-              <li>Minimize inline styles</li>
-            </ul>
-          </div>
+    <div class="callout">
+      <h3>HTML Structure</h3>
+      <ul>
+        <li>Use semantic HTML elements for better meaning</li>
+        <li>Always include the <code>alt</code> attribute for images</li>
+        <li>Use lowercase for all HTML elements and attributes</li>
+        <li>Keep HTML clean and readable with proper indentation</li>
+        <li>Use proper heading hierarchy (h1 → h2 → h3...)</li>
+        <li>Maintain proper nesting and hierarchy</li>
+      </ul>
+    </div>
 
-          <div class="card">
-            <div class="card-title">🧹 Clean Code</div>
-            <ul>
-              <li>Use lowercase for all tags and attributes</li>
-              <li>Always quote attribute values</li>
-              <li>Close all tags (even optional ones)</li>
-              <li>Indent nested elements consistently (2 spaces)</li>
-              <li>Use meaningful id/class names (BEM methodology)</li>
-              <li>Validate at <code>validator.w3.org</code></li>
-            </ul>
-          </div>
+    <div class="callout">
+      <h3>Performance</h3>
+      <ul>
+        <li>Optimize images (use appropriate formats and sizes)</li>
+        <li>Minimize HTTP requests</li>
+        <li>Use lazy loading for images below the fold</li>
+        <li>Use CDNs for external resources</li>
+        <li>Compress and minify HTML in production</li>
+      </ul>
+    </div>
 
-          <div class="card">
-            <div class="card-title">🔍 SEO Essentials</div>
-            <ul>
-              <li>
-                One <code>&lt;h1&gt;</code> per page — include main keyword
-              </li>
-              <li>Descriptive <code>&lt;title&gt;</code> (50–60 chars)</li>
-              <li>Meaningful <code>meta description</code> (150–160 chars)</li>
-              <li>Use semantic HTML (search engines read structure)</li>
-              <li>
-                Add <code>lang</code> attribute to <code>&lt;html&gt;</code>
-              </li>
-              <li>Use descriptive <code>alt</code> on content images</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
+    <div class="callout">
+      <h3>SEO Best Practices</h3>
+      <ul>
+        <li>Use descriptive and unique page titles</li>
+        <li>Write compelling meta descriptions</li>
+        <li>Use header tags to structure content</li>
+        <li>Include internal and external links</li>
+        <li>Optimize images with alt text</li>
+        <li>Use structured data markup</li>
+      </ul>
+    </div>
 
-    <footer>
-      <span>HTML A to Z — Complete Reference</span>
-      <span>11 chapters · ~60 elements covered</span>
-    </footer>
-  </body>
+    <div class="callout">
+      <h3>Accessibility Best Practices</h3>
+      <ul>
+        <li>Provide focus indicators</li>
+        <li>Use ARIA labels when necessary</li>
+        <li>Provide alternative text for images</li>
+        <li>Use proper contrast ratios</li>
+        <li>Ensure keyboard navigation works</li>
+        <li>Test with screen readers</li>
+      </ul>
+    </div>
+
+  </main>
+
+  <!-- RIGHT TOC -->
+  <aside class="toc">
+    <h4>On this page</h4>
+    <a href="#what-is-html">What is HTML?</a>
+    <a href="#structure">Structure</a>
+    <a href="#tags">Tags &amp; basics</a>
+    <a href="#text">Text elements</a>
+    <a href="#lists">Lists</a>
+    <a href="#nested">Nested elements</a>
+    <a href="#media">Media tags</a>
+    <a href="#attributes">Attributes</a>
+    <a href="#navigating">Navigating pages</a>
+    <a href="#comments">Comments</a>
+    <a href="#div">Div tags</a>
+    <a href="#semantic">Semantic tags</a>
+    <a href="#tables">Tables</a>
+    <a href="#forms-what">Forms</a>
+    <a href="#input-types">Input types</a>
+    <a href="#audio-video">Audio &amp; video</a>
+    <a href="#iframe">Iframe</a>
+    <a href="#best-practices">Best practices</a>
+  </aside>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
 </html>
